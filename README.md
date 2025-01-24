@@ -57,12 +57,15 @@ You will need to use the environment variables [defined in `.env.example`](.env.
 6. Download your environment variables: `vercel env pull`
 7. Install dependencies:
    ```bash
-   pnpm install
-   pnpm dev
+   pnpm i
    ```
 8. Run the database migrations:
    ```bash
    pnpm db:push
+   ```
+9. Run the app locally:
+   ```bash
+   pnpm dev
    ```
 
 Your app template should now be running on [localhost:3000](http://localhost:3000/).
