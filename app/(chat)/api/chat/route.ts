@@ -65,6 +65,8 @@ export async function POST(request: Request) {
     return new Response('Model not found', { status: 404 });
   }
 
+  console.log('messages', messages);
+
   const coreMessages = convertToCoreMessages(messages);
   const userMessage = getMostRecentUserMessage(coreMessages);
 
@@ -72,6 +74,7 @@ export async function POST(request: Request) {
     return new Response('No user message found', { status: 400 });
   }
 
+  console.log('userMessage', userMessage);
   const chat = await getChatById({ id });
 
   if (!chat) {
@@ -135,7 +138,7 @@ export async function POST(request: Request) {
                       content: message.content,
                       createdAt: new Date(),
                     };
-                  },
+                  }
                 ),
               });
             } catch (error) {
