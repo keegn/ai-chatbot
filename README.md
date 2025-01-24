@@ -48,7 +48,17 @@ You will need to use the environment variables [defined in `.env.example`](.env.
 
 1. Install Vercel CLI: `npm i -g vercel`
 2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+3. Create a Postgres database with your Vercel Storage
+4. Create a Blob store with your Vercel Storage
+5. Add the required environment variables to your Vercel project:
+   - Database connection string (from step 3)
+   - Blob connection string (from step 4)
+   - Other variables from `.env.example`
+6. Download your environment variables: `vercel env pull`
+7. Run the database migrations:
+   ```bash
+   pnpm db:push
+   ```
 
 ```bash
 pnpm install
